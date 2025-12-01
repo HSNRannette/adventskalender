@@ -1,0 +1,119 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #111a36;
+    text-align: center;
+    color: #f6f7fb;
+    margin: 0;
+    padding: 20px 0 32px;
+}
+
+h1 {
+    margin: 0 0 16px;
+    letter-spacing: 1px;
+    color: #d4af37;
+    font-family: "Lucida Calligraphy", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: clamp(32px, 4vw, 48px);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4), 0 0 14px rgba(212, 175, 55, 0.45);
+}
+
+#calendar {
+    position: relative;
+    width: min(92vw, 1100px);
+    aspect-ratio: 1141 / 761;
+    margin: 0 auto;
+    background: url("adventskalender.jpg") center/contain no-repeat;
+    border: 10px solid #d4af37;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 24px rgba(212, 175, 55, 0.45);
+}
+
+.day-page #calendar {
+    background: url("tag1.jpg") center/contain no-repeat;
+}
+
+.day2-page #calendar {
+    background: url("tag2.jpg") center/contain no-repeat;
+}
+
+.content-card {
+    width: min(90vw, 680px);
+    margin: 20px auto 0;
+    padding: 22px 26px;
+    background: rgba(17, 26, 54, 0.55);
+    border: 2px solid rgba(212, 175, 55, 0.9);
+    border-radius: 14px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+    color: #f6f7fb;
+}
+
+.day-page .content-card {
+    position: absolute;
+    bottom: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(90%, 760px);
+    margin: 0;
+    backdrop-filter: blur(4px);
+}
+
+.content-card p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 17px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 16px;
+    color: #111a36;
+    background: #d4af37;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.back-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+}
+
+.back-link:active {
+    transform: translateY(1px);
+    opacity: 0.9;
+}
+
+.door {
+    position: absolute;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background: transparent;
+    color: transparent;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.door:hover {
+    transform: scale(1.02);
+    border-color: rgba(255, 255, 255, 0.7);
+    color: #f6f7fb;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.door.open {
+    color: #f6f7fb;
+    border-color: rgba(59, 214, 154, 0.9);
+    background: rgba(59, 214, 154, 0.2);
+    transform: rotateY(8deg) scale(1.01);
+}
+
+.door.locked {
+    cursor: not-allowed;
+    border-style: dashed;
+}
